@@ -1,0 +1,30 @@
+/* src/styles/SchemeDisplay.module.css */
+.schemeContainer {
+    padding: 20px;
+    background-color: #e8f5e9; /* Light green background */
+}
+
+.title {
+    text-align: center;
+    color: #4caf50; /* Dark green for the title */
+    margin-bottom: 20px;
+}
+
+.schemeCard {
+    background: #ffffff; /* White background for each scheme card */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.schemeName {
+    font-size: 1.5rem;
+    color: #388e3c; /* Darker green for scheme name */
+    margin-bottom: 10px;
+}
+
+.description {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
