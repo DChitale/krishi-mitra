@@ -1,0 +1,36 @@
+/* src/styles/MainSection.module.css */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.imageSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.mainImage {
+    width: 100%;
+    max-width: 1200px; /* Adjust as per your needs */
+    height: auto;
+    border-radius: 8px;
+}
+
+.content {
+    text-align: center;
+}
+
+.h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.p {
+    font-size: 1.2rem;
+    color: #333;
+}

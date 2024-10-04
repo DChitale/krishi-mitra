@@ -1,7 +1,11 @@
-import Image from "next/image";
+// app/page.js
+import React from 'react';
+import MainSection from '../src/components/MainSection';  // Correct path to src/components
 
-export default function Home() {
-  return (
-    <h1>HEllo world</h1>
-  );
+export default function HomePage() {
+    return (
+        <div>
+            <MainSection />
+        </div>
+    );
 }

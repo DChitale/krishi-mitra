@@ -1,0 +1,79 @@
+/* src/styles/LoginPage.module.css */
+
+.loginPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+.loginContainer {
+    background-color: #ffffff; /* White background for the form */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for modern look */
+    width: 100%;
+    max-width: 400px; /* Maximum width */
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 20px;
+    color: #34495e; /* Dark text color */
+}
+
+.formGroup {
+    margin-bottom: 20px; /* Space between form elements */
+    text-align: left; /* Align labels to the left */
+}
+
+.label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #34495e; /* Darker label color */
+}
+
+.inputField {
+    width: 100%; /* Full width input */
+    padding: 10px;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.inputField:focus {
+    border-color: #2ecc71; /* Green border on focus */
+    outline: none; /* Remove outline */
+}
+
+.loginButton {
+    width: 100%; /* Full width button */
+    background-color: #2ecc71; /* Green background */
+    color: white; /* White text */
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease;
+}
+
+.loginButton:hover {
+    background-color: #27ae60; /* Darker green on hover */
+}
+
+.registerText {
+    margin-top: 20px;
+    color: #34495e; /* Dark text color */
+}
+
+.registerText a {
+    color: #2ecc71; /* Link color */
+    text-decoration: none;
+}
+
+.registerText a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
