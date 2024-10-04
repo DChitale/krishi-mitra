@@ -1,0 +1,41 @@
+.aboutPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-color: #e8f5e9; /* Light green background for a farm-related theme */
+    padding: 20px; /* Padding around the page */
+}
+
+.aboutContainer {
+    background: #ffffff; /* White background for the content */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px; /* Maximum width for larger screens */
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #4caf50; /* Green color for the title */
+}
+
+.description {
+    margin-bottom: 1.2rem;
+    line-height: 1.6; /* Improved readability */
+}
+
+.subtitle {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: #388e3c; /* Darker green for subtitles */
+}
+
+.benefitsList {
+    list-style-type: disc; /* Bulleted list */
+    margin-left: 20px; /* Indent the list */
+}

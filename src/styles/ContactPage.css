@@ -1,0 +1,74 @@
+.contactPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f9f9f9; /* Light background color */
+    padding: 20px; /* Padding around the page */
+}
+
+.contactContainer {
+    background: #ffffff; /* White background for the content */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px; /* Maximum width for larger screens */
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #4caf50; /* Green color for the title */
+}
+
+.formGroup {
+    margin-bottom: 1.2rem;
+}
+
+.inputField, .textAreaField {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+.inputField:focus, .textAreaField:focus {
+    outline: none;
+    border-color: #4caf50; /* Green color on focus */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.25);
+}
+
+.textAreaField {
+    min-height: 100px; /* Minimum height for the textarea */
+}
+
+.submitButton {
+    padding: 0.8rem;
+    background-color: #4caf50; /* Green color for the button */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.submitButton:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+.successMessage {
+    color: green;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.errorMessage {
+    color: red;
+    text-align: center;
+    margin-bottom: 1rem;
+}
