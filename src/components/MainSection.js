@@ -13,7 +13,7 @@ const MainSection = () => {
             <section className={styles.content}>
                 <h2>Welcome to the Agricultural Schemes Portal</h2>
                 <p>
-                    Find the latest schemes and benefits available for farmers. Browse through various options and apply now.
+                    Find the latest schemes and benefits available for farmers. Browse through various options and apply now!!
                 </p>
             </section>
         </main>
