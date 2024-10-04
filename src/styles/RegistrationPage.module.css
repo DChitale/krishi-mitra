@@ -1,5 +1,5 @@
-/* src/styles/LoginPage.module.css */
-.loginPage {
+/* src/styles/RegistrationPage.module.css */
+.registrationPage {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,7 +10,7 @@
     filter: brightness(0.8); /* Optional: Dim the background image for better contrast */
 }
 
-.loginContainer {
+.registrationContainer {
     background: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
     padding: 2rem;
     border-radius: 8px;
@@ -28,7 +28,7 @@
     color: #4caf50; /* Dark green color */
 }
 
-.loginForm {
+.registrationForm {
     display: flex;
     flex-direction: column;
 }
@@ -51,21 +51,7 @@
     box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Green shadow on focus */
 }
 
-.passwordContainer {
-    display: flex;
-    align-items: center; /* Center the input and button vertically */
-}
-
-.togglePassword {
-    background: none;
-    border: none;
-    color: #4caf50; /* Dark green for the icon */
-    cursor: pointer;
-    margin-left: 10px; /* Space between input and button */
-    font-size: 1rem; /* Standard font size */
-}
-
-.loginButton {
+.registerButton {
     padding: 0.8rem;
     background-color: #4caf50; /* Green button color */
     color: #fff; /* White text on button */
@@ -75,22 +61,6 @@
     transition: background-color 0.3s ease;
 }
 
-.loginButton:hover {
+.registerButton:hover {
     background-color: #388e3c; /* Darker green on hover */
-}
-
-.errorMessage {
-    color: red;
-    margin-bottom: 1rem;
-}
-
-.registerText {
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.eyeIcon {
-    width: 20px; /* Adjust size as needed */
-    height: 20px; /* Adjust size as needed */
-    color: #4caf50; /* Match icon color with theme */
 }
