@@ -8,7 +8,7 @@ const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-    const [showPassword, setShowPassword] = useState(false); // New state for password visibility
+    const [showPassword, setShowPassword] = useState(false); // State for password visibility
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -27,7 +27,8 @@ const LoginPage = () => {
     return (
         <div className={styles.loginPage}>
             <div className={styles.loginContainer}>
-                <h2 className={styles.title}>Login</h2>
+                <h2 className={styles.title}>Farmer Login</h2>
+                <p className={styles.subTitle}>Access information about government schemes for your farm.</p>
                 <form className={styles.loginForm} onSubmit={handleSubmit}>
                     <div className={styles.formGroup}>
                         <label htmlFor="email">Email</label>
@@ -59,7 +60,7 @@ const LoginPage = () => {
                             />
                             <button type="button" className={styles.togglePassword} onClick={togglePasswordVisibility}>
                                 {/* Eye Icon */}
-                                <span className={styles.eyeIcon}>{showPassword ? '👁️' : '👁️'}</span> {/* Adjusted for visibility */}
+                                <span className={styles.eyeIcon}>{showPassword ? '👁️' : '👁️'}</span>
                             </button>
                         </div>
                     </div>
