@@ -4,10 +4,11 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('https://media.istockphoto.com/id/2156200425/photo/crops-grow-on-fertile-agricultural-farm-land.webp?a=1&b=1&s=612x612&w=0&k=20&c=z8923-lkw8Og3PKHYGwkJ1n6eAKAqMplLdgQY87riE4='); /* Background image URL */
-    background-size: cover; /* Cover the entire page */
-    background-position: center; /* Center the image */
-    filter: brightness(0.8); /* Optional: Dim the background image for better contrast */
+    background-color: #e8f5e9; /* Optional: Set a light green background instead */
+    /* background-image: url('https://media.istockphoto.com/id/2156200425/photo/crops-grow-on-fertile-agricultural-farm-land.webp?a=1&b=1&s=612x612&w=0&k=20&c=z8923-lkw8Og3PKHYGwkJ1n6eAKAqMplLdgQY87riE4=');  Background image URL */
+    background-size: cover; /* This line can be removed since there's no image */
+    background-position: center; /* This line can be removed since there's no image */
+    filter: brightness(0.8); /* This line can be removed since there's no image */
 }
 
 .registrationContainer {

@@ -1,35 +1,30 @@
+// src/components/ContactPage.js
+'use client'; // This line makes this a Client Component
+
 import React, { useState } from 'react';
-import styles from '../styles/ContactPage.module.css';
+import styles from '../styles/ContactPage.module.css'; // Import your CSS for styling
 
 const ContactPage = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
-    const [success, setSuccess] = useState(false);
-    const [error, setError] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!name || !email || !message) {
-            setError('Please fill in all fields.');
-            setSuccess(false);
-            return;
+            setErrorMessage('Please fill in all fields');
+        } else {
+            setErrorMessage('');
+            alert('Your message has been sent!');
+            // Add further handling logic (like sending data to an API) here
         }
-        setError('');
-        // Handle the form submission (e.g., send the data to an API)
-        // For now, we simulate a successful submission
-        setSuccess(true);
-        setName('');
-        setEmail('');
-        setMessage('');
     };
 
     return (
         <div className={styles.contactPage}>
             <div className={styles.contactContainer}>
-                <h1 className={styles.title}>Contact Us</h1>
-                {success && <p className={styles.successMessage}>Your message has been sent successfully!</p>}
-                {error && <p className={styles.errorMessage}>{error}</p>}
+                <h2 className={styles.title}>Contact Us</h2>
                 <form className={styles.contactForm} onSubmit={handleSubmit}>
                     <div className={styles.formGroup}>
                         <label htmlFor="name">Name</label>
@@ -62,10 +57,11 @@ const ContactPage = () => {
                             className={styles.textAreaField}
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
-                            placeholder="Write your message here"
+                            placeholder="Enter your message"
                             required
                         ></textarea>
                     </div>
+                    {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
                     <button type="submit" className={styles.submitButton}>Send Message</button>
                 </form>
             </div>
