@@ -6,11 +6,11 @@
 .navList {
     list-style-type: none; /* Remove bullets */
     display: flex; /* Horizontal layout */
-    justify-content: space-around; /* Space items evenly */
+    justify-content: space-evenly; /* Space items evenly */
 }
 
 .navList li {
-    margin: 0 15px; /* Spacing between links */
+    margin: 0 10px; /* Spacing between links */
 }
 
 .navList a {
