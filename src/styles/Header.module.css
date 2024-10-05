@@ -1,5 +1,5 @@
 .header {
-    background-color: #75e279; /* Green background */
+    background-color: #baf7bc; /* Green background */
     padding: 1rem; /* Padding around header */
 }
 
@@ -14,7 +14,7 @@
 }
 
 .navList a {
-    color: white; /* Link color */
+    color: rgb(54, 54, 54); /* Link color */
     text-decoration: none; /* Remove underline */
     font-weight: bold; /* Bold text */
 }

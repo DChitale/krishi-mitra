@@ -1,34 +1,43 @@
-// src/components/LoginPage.js
 'use client';
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';  // Correct import for App Router
 import styles from '../styles/LoginPage.module.css';
+import { account } from '../appwrite';  // Adjust according to your Appwrite configuration
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
-    const [showPassword, setShowPassword] = useState(false); // State for password visibility
+    const [showPassword, setShowPassword] = useState(false);
+    const router = useRouter();  // Initialize the Next.js router
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (!email || !password) {
             setErrorMessage('Please fill in all fields');
         } else {
             setErrorMessage('');
-            alert('Login functionality to be implemented.');
+            try {
+                // Login the user with Appwrite
+                await account.createEmailPasswordSession(email, password);
+                // alert('Login successful!');
+                router.push('/scheme');  // Redirect to homepage or another path
+            } catch (error) {
+                console.error('Login failed:', error.message);
+                setErrorMessage('Invalid credentials. Please try again.');
+            }
         }
     };
 
     const togglePasswordVisibility = () => {
-        setShowPassword(!showPassword); // Toggle the password visibility
+        setShowPassword(!showPassword);  // Toggle password visibility
     };
 
     return (
         <div className={styles.loginPage}>
             <div className={styles.loginContainer}>
-                <h2 className={styles.title}>Farmer Login</h2>
-                <p className={styles.subTitle}>Access information about government schemes for your farm.</p>
+                <h2 className={styles.title}>User Login</h2>
                 <form className={styles.loginForm} onSubmit={handleSubmit}>
                     <div className={styles.formGroup}>
                         <label htmlFor="email">Email</label>
@@ -48,7 +57,7 @@ const LoginPage = () => {
                         <label htmlFor="password">Password</label>
                         <div className={styles.passwordContainer}>
                             <input
-                                type={showPassword ? "text" : "password"} // Change type based on visibility
+                                type={showPassword ? "text" : "password"} 
                                 id="password"
                                 className={styles.inputField}
                                 value={password}
@@ -59,7 +68,6 @@ const LoginPage = () => {
                                 required
                             />
                             <button type="button" className={styles.togglePassword} onClick={togglePasswordVisibility}>
-                                {/* Eye Icon */}
                                 <span className={styles.eyeIcon}>{showPassword ? '👁️' : '👁️'}</span>
                             </button>
                         </div>

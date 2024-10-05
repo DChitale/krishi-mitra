@@ -32,17 +32,17 @@ const MainSection = () => {
 
     const features = [
         {
-            img: "https://via.placeholder.com/100",
+            img: "https://i.ibb.co/pJbd8ng/person.png",
             title: "User-Friendly Interface",
             description: "Our platform is designed with users in mind, making it easy to navigate and find the information you need."
         },
         {
-            img: "https://via.placeholder.com/100",
+            img: "https://i.ibb.co/d4LSBB0/sprout.png",
             title: "Comprehensive Schemes",
             description: "Browse through a wide range of agricultural schemes tailored to meet the needs of farmers."
         },
         {
-            img: "https://via.placeholder.com/100",
+            img: "https://i.ibb.co/mSNzj15/fast-time.png",
             title: "Real-Time Updates",
             description: "Stay informed with the latest updates and notifications about new schemes and benefits."
         }

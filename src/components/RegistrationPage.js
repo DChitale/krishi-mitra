@@ -3,13 +3,13 @@
 
 import React, { useState } from 'react';
 import styles from '../styles/RegistrationPage.module.css';
+import { account } from '../appwrite'; // Import the Appwrite account instance
 
 const RegistrationPage = () => {
     const [formData, setFormData] = useState({
         name: '',
-        emailid: '',
-        password:'',
-        
+        email: '',
+        password: '',
     });
 
     const [formErrors, setFormErrors] = useState({});
@@ -22,36 +22,40 @@ const RegistrationPage = () => {
 
     const validate = () => {
         let errors = {};
-        const phoneRegex = /^[6-9]\d{9}$/; // Basic validation for phone number
 
         if (!formData.name) {
             errors.name = 'Name is required';
         }
-        if (!formData.address) {
-            errors.address = 'Emailid is required';
+        if (!formData.email) {
+            errors.email = 'Email is required';
         }
-        if (!formData.farmType) {
-            errors.farmType = 'Password is required';
+        if (!formData.password) {
+            errors.password = 'Password is required';
         }
-     
 
         setFormErrors(errors);
         return Object.keys(errors).length === 0;
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if (validate()) {
-            setIsSubmitted(true);
-            alert('Form submitted successfully!');
-            // Here you can handle the form submission logic, like sending data to the backend
+            try {
+                // Create a new user in Appwrite
+                await account.create('unique()', formData.email, formData.password, formData.name);
+                setIsSubmitted(true);
+                alert('User registered successfully!');
+            } catch (error) {
+                console.error('Error during registration:', error.message);
+                setFormErrors({ ...formErrors, server: error.message });
+            }
         }
     };
 
     return (
         <div className={styles.registrationPage}>
             <div className={styles.registrationContainer}>
-                <h2 className={styles.title}>Farmer Registration</h2>
+                <h2 className={styles.title}>User Registration</h2>
                 {isSubmitted ? (
                     <p className={styles.successMessage}>Registration successful!</p>
                 ) : (
@@ -70,33 +74,34 @@ const RegistrationPage = () => {
                             {formErrors.name && <span className={styles.errorMessage}>{formErrors.name}</span>}
                         </div>
                         <div className={styles.formGroup}>
-                            <label htmlFor="address">Email id</label>
+                            <label htmlFor="email">Email</label>
                             <input
                                 type="email"
-                                id="address"
-                                name="address"
+                                id="email"
+                                name="email"
                                 className={styles.inputField}
-                                value={formData.address}
+                                value={formData.email}
                                 onChange={handleChange}
                                 required
                             />
-                            {formErrors.address && <span className={styles.errorMessage}>{formErrors.address}</span>}
+                            {formErrors.email && <span className={styles.errorMessage}>{formErrors.email}</span>}
                         </div>
                         <div className={styles.formGroup}>
-                            <label htmlFor="farmType">Password</label>
+                            <label htmlFor="password">Password</label>
                             <input
                                 type="password"
-                                id="farmType"
-                                name="farmType"
+                                id="password"
+                                name="password"
                                 className={styles.inputField}
-                                value={formData.farmType}
+                                value={formData.password}
                                 onChange={handleChange}
                                 required
                             />
-                            {formErrors.farmType && <span className={styles.errorMessage}>{formErrors.farmType}</span>}
+                            {formErrors.password && <span className={styles.errorMessage}>{formErrors.password}</span>}
                         </div>
-                        
-                        
+
+                        {formErrors.server && <span className={styles.errorMessage}>{formErrors.server}</span>}
+
                         <button type="submit" className={styles.registerButton}>Register</button>
                     </form>
                 )}

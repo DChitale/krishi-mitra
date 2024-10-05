@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "appwrite": "^16.0.2",
+    "express": "^2.5.11",
     "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18",
