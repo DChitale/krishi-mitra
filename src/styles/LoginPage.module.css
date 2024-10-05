@@ -29,7 +29,6 @@
     margin-bottom: 1.5rem;
     color: #6D9E5A; /* Lighter green for subtitle */
 }
-
 .loginForm {
     display: flex;
     flex-direction: column;

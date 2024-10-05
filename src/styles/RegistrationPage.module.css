@@ -1,67 +1,102 @@
-/* src/styles/RegistrationPage.module.css */
+/* RegistrationPage.module.css */
+
+/* Container Styling */
 .registrationPage {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #e8f5e9; /* Optional: Set a light green background instead */
-    /* background-image: url('https://media.istockphoto.com/id/2156200425/photo/crops-grow-on-fertile-agricultural-farm-land.webp?a=1&b=1&s=612x612&w=0&k=20&c=z8923-lkw8Og3PKHYGwkJ1n6eAKAqMplLdgQY87riE4=');  Background image URL */
-    background-size: cover; /* This line can be removed since there's no image */
-    background-position: center; /* This line can be removed since there's no image */
-    filter: brightness(0.8); /* This line can be removed since there's no image */
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
 }
 
 .registrationContainer {
-    background: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
     width: 100%;
-    max-width: 400px;
-    box-sizing: border-box;
-    border: 2px solid #4caf50; /* Green border for farm theme */
 }
 
 .title {
     text-align: center;
-    font-size: 2rem; /* Slightly larger title font */
-    margin-bottom: 1.5rem;
-    color: #4caf50; /* Dark green color */
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
+/* Form Styling */
 .registrationForm {
     display: flex;
     flex-direction: column;
 }
 
 .formGroup {
-    margin-bottom: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.label {
+    font-size: 16px;
+    margin-bottom: 5px;
 }
 
 .inputField {
     width: 100%;
-    padding: 0.8rem;
-    border-radius: 4px;
-    border: 1px solid #a5d6a7; /* Light green border */
-    transition: all 0.3s ease;
-}
-
-.inputField:focus {
-    outline: none;
-    border-color: #4caf50; /* Darker green on focus */
-    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5); /* Green shadow on focus */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .registerButton {
-    padding: 0.8rem;
-    background-color: #4caf50; /* Green button color */
-    color: #fff; /* White text on button */
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    transition: background-color 0.3s;
 }
 
 .registerButton:hover {
-    background-color: #388e3c; /* Darker green on hover */
+    background-color: #45a049;
+}
+
+/* Error Message Styling */
+.errorMessage {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.successMessage {
+    color: green;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .registrationContainer {
+        padding: 20px;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 20px;
+    }
+
+    .inputField {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .registerButton {
+        padding: 8px;
+        font-size: 14px;
+    }
 }
