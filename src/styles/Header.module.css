@@ -1,24 +1,117 @@
+/* Main Header Style */
 .header {
-    background-color: #baf7bc; /* Green background */
-    padding: 1rem; /* Padding around header */
+    background-color: #fff;
+    padding: 0.5rem 2rem;  /* Reduced padding for shorter header */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+/* Navigation Container - Flexbox Layout */
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    height: 4rem;  /* Adjusted height for a compact look */
+}
+
+/* Navigation Left Section */
+.navLeft {
+    display: flex;
 }
 
 .navList {
-    list-style-type: none; /* Remove bullets */
-    display: flex; /* Horizontal layout */
-    justify-content: space-evenly; /* Space items evenly */
+    display: flex;
+    gap: 2rem;  /* Space between nav items */
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.navList li {
-    margin: 0 10px; /* Spacing between links */
+.navItem a, .logoutButton {
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;  /* Underline effect */
 }
 
-.navList a {
-    color: rgb(54, 54, 54); /* Link color */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Bold text */
+.navItem a:hover, .logoutButton:hover {
+    color: #28a745;
+    border-bottom: 2px solid #28a745;  /* Green underline on hover */
 }
 
-.navList a:hover {
-    text-decoration: underline; /* Underline on hover */
+.logoutButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Logo and Brand Name */
+.logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Header.module.css */
+.logo {
+    width: 180px; /* Adjust the width as necessary */
+    height: 180px; /* Maintains the aspect ratio */
+     margin-right: -84px;/* Optional: Space between logo and brand name*/
+} 
+
+
+.brandName {
+    font-size: 2rem;  /* Increased font size for KRUSHIMITRA */
+    font-weight: bold;
+    color: #28a745;
+    text-transform: uppercase;
+    letter-spacing: 2px;  /* Letter spacing for modern look */
+}
+
+/* Navigation Right Section (Login/Logout) */
+.navRight {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.navItemRight {
+    margin-left: auto;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    background-color: #28a745;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navItemRight:hover {
+    background-color: darkgreen;
+    color: white;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .navContainer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navList {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .brandName {
+        font-size: 1.5rem;  /* Reduce font size on mobile */
+    }
 }

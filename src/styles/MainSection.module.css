@@ -1,171 +1,168 @@
-/* src/styles/MainSection.module.css */
-
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 20px;
-    background-color: #f9f9f9; /* Light background color */
+    font-family: 'Poppins', sans-serif;
 }
 
-.navbar {
+/* Hero Section with Background Image */
+.heroSection {
+    position: relative;
+    background-image: url('https://modernfarmingindia.home.blog/wp-content/uploads/2019/01/cropped-modern-farming-in-india.png');
+    background-size: cover;
+    background-position: center;
+    height: 500px; /* Height of the hero section */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px 20px;
-    background-color: #4caf50; /* Green background for navbar */
-    color: white;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.navLinks {
-    list-style: none;
-    display: flex;
-    gap: 15px; /* Space between links */
-}
-
-.navLinks li a {
-    color: white;
-    text-decoration: none;
-}
-
-.imageSection {
-    width: 100%;
-    display: flex;
+    align-items: flex-start; /* Align items to the start to lower the text */
     justify-content: center;
-    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.mainImage {
-    width: 100%;
-    max-width: 1200px; /* Adjust as per your needs */
-    height: auto;
-    border-radius: 8px;
-}
-
-.content {
+.heroOverlay {
+    background-color: rgba(0, 0, 0, 0.3); /* Reduced darkness of the overlay */
+    padding: 40px;
     text-align: center;
-    margin-bottom: 40px; /* Space below content */
+    border-radius: 12px;
+    position: relative; /* Allows positioning of children */
+    top: 100px; /* Adjusts vertical position of the overlay */
 }
 
-.h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.heroTitle {
+    font-size: 2rem; /* Slightly smaller font size for the title */
+    color: #ffffff;
+    margin-bottom: 10px;
 }
 
-.p {
-    font-size: 1.2rem;
-    color: #333;
+.heroSubtitle {
+    font-size: 1rem; /* Adjusted font size */
+    color: #ffffff;
+    margin-bottom: 20px;
+    line-height: 1.5;
 }
 
 .ctaButton {
-    background-color: #4caf50; /* Button color */
+    background-color: #27ae60;
     color: white;
-    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    padding: 12px 25px;
     font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .ctaButton:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #1b7e45;
 }
 
-/* Features Section Styles */
+/* Features Section */
 .featuresSection {
-    margin: 20px 0;
+    margin-top: 50px;
     text-align: center;
+}
+
+.featuresTitle {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #27ae60;
+    font-weight: bold;
 }
 
 .featuresContainer {
     display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 1200px; /* Adjust as necessary */
-    flex-wrap: wrap; /* Allow wrapping of items for responsiveness */
+    justify-content: center;
+    gap: 30px;
 }
 
 .featureCard {
-    background-color: white; /* Background for cards */
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    width: 30%;
     text-align: center;
-    width: 30%; /* Width of each card */
-    margin: 10px; /* Space around cards */
+    transition: transform 0.3s ease;
+}
+
+.featureCard:hover {
+    transform: translateY(-5px);
 }
 
 .featureImage {
-    width: 100px; /* Circle image size */
-    height: 100px; /* Circle image size */
-    border-radius: 50%; /* Make it circular */
-    object-fit: cover; /* Maintain aspect ratio */
-    margin-bottom: 15px; /* Space below image */
+    max-width: 80px;
+    margin-bottom: 15px;
 }
 
 .featureTitle {
-    font-size: 1.2rem;
-    margin-bottom: 10px; /* Space below title */
+    font-size: 1.4rem;
+    color: #27ae60;
+    margin-bottom: 10px;
 }
 
 .featureDescription {
     font-size: 1rem;
-    color: #555; /* Darker text for better readability */
+    color: #555;
+    line-height: 1.5;
 }
 
-/* FAQ Section Styles */
+/* FAQ Section */
 .faqSection {
-    background-color: white; /* Background for FAQ section */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
-    width: 100%;
-    max-width: 1200px;
-    margin: 20px 0; /* Margin around the section */
+    margin-top: 50px;
+}
+
+.faqTitle {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
 }
 
 .faqItem {
-    border-bottom: 1px solid #ddd; /* Divider between FAQs */
-    padding: 15px 0;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+.faqItem:hover {
+    background-color: #f1f1f1;
 }
 
 .faqQuestion {
-    cursor: pointer;
-    font-weight: bold;
     font-size: 1.2rem;
+    font-weight: bold;
     display: flex;
-    justify-content: space-between; /* Align icon on the right */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon, .activeIcon {
+    margin-left: 10px;
+    font-size: 1.5rem;
 }
 
 .faqAnswer {
+    margin-top: 15px;
     font-size: 1rem;
-    color: #666;
-    padding-top: 10px; /* Space above answer */
+    color: #555;
 }
 
-.icon {
-    transition: transform 0.2s;
+/* Footer Styling */
+.footer {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 50px;
+    border-radius: 12px;
 }
 
-.activeIcon {
-    transform: rotate(180deg); /* Rotate icon when active */
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .featuresContainer {
-        flex-direction: column; /* Stack cards vertically */
-        align-items: center; /* Center align cards */
-    }
 
-    .featureCard {
-        width: 80%; /* Full width on mobile */
-        margin: 10px 0; /* Space above and below cards */
-    }
-}
+

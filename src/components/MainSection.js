@@ -50,21 +50,20 @@ const MainSection = () => {
 
     return (
         <main className={styles.main}>
-            {/* Existing Header and Content */}
-            {/* Add your existing header code here if needed */}
-            <section className={styles.imageSection}>
-                <img src="https://modernfarmingindia.home.blog/wp-content/uploads/2019/01/cropped-modern-farming-in-india.png" alt="Agriculture Scheme" className={styles.mainImage}/>
+            {/* Hero Section with Background Image */}
+            <section className={styles.heroSection}>
+                <div className={styles.heroOverlay}>
+                    <h2 className={styles.heroTitle}>Welcome to the Agricultural Schemes Portal</h2>
+                    <p className={styles.heroSubtitle}>
+                        Find the latest schemes and benefits available for farmers.
+                    </p>
+                    <button className={styles.ctaButton}>Explore Schemes</button>
+                </div>
             </section>
-            <section className={styles.content}>
-                <h2>Welcome to the Agricultural Schemes Portal</h2>
-                <p>
-                    Find the latest schemes and benefits available for farmers. Browse through various options and apply now!!
-                </p>
-                <button className={styles.ctaButton}>Explore Schemes</button>
-            </section>
+
             {/* Features Section */}
             <section className={styles.featuresSection}>
-                <h3>Website Features</h3>
+                <h3 className={styles.featuresTitle}>Website Features</h3>
                 <div className={styles.featuresContainer}>
                     {features.map((feature, index) => (
                         <div key={index} className={styles.featureCard}>
@@ -75,9 +74,10 @@ const MainSection = () => {
                     ))}
                 </div>
             </section>
+
             {/* FAQ Section */}
             <section className={styles.faqSection}>
-                <h3>Frequently Asked Questions</h3>
+                <h3 className={styles.faqTitle}>Frequently Asked Questions</h3>
                 {faqs.map((faq, index) => (
                     <div key={index} className={styles.faqItem}>
                         <div 
@@ -95,8 +95,14 @@ const MainSection = () => {
                     </div>
                 ))}
             </section>
+
+            {/* Footer Section */}
+            <footer className={styles.footer}>
+                <p>© 2024 Krishi Mitra - All Rights Reserved</p>
+            </footer>
         </main>
     );
 };
 
 export default MainSection;
+

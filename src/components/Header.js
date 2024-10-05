@@ -37,20 +37,28 @@ const Header = () => {
 
     return (
         <header className={styles.header}>
-            <nav>
-                <ul className={styles.navList}>
-                    <li><Link href="/">Home</Link></li>
-                    <li><Link href="/about">About</Link></li>
-                    <li><Link href="/contact">Contact</Link></li>
-                    {/* <li><Link href="/scheme">Schemes</Link></li> */}
+            <nav className={styles.navContainer}>
+                <div className={styles.navLeft}>
+                    <ul className={styles.navList}>
+                        <li className={styles.navItem}><Link href="/">Home</Link></li>
+                        <li className={styles.navItem}><Link href="/about">About</Link></li>
+                        <li className={styles.navItem}><Link href="/contact">Contact</Link></li>
+                    </ul>
+                </div>
 
-                    {/* Conditionally render Login or Logout based on user login state */}
+                <div className={styles.logoContainer}>
+                    <img src="https://i.ibb.co/HF5r4tK/LOGO-removebg-preview.png"alt="Krushi Mitra Logo" className={styles.logo} />
+                    <span className={styles.brandName}>KRISHIMITRA</span>
+                </div>
+
+                <div className={styles.navRight}>
+                    {/* Conditionally render Login or Logout */}
                     {!isLoggedIn ? (
-                        <li><Link href="/login">Login</Link></li>
+                        <Link href="/login" className={styles.navItemRight}>Login</Link>
                     ) : (
-                        <li><button onClick={handleLogout} className={styles.logoutButton}>Logout</button></li>
+                        <button onClick={handleLogout} className={styles.logoutButton}>Logout</button>
                     )}
-                </ul>
+                </div>
             </nav>
         </header>
     );
