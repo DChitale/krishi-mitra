@@ -7,12 +7,9 @@ import styles from '../styles/RegistrationPage.module.css';
 const RegistrationPage = () => {
     const [formData, setFormData] = useState({
         name: '',
-        address: '',
-        farmType: '',
-        contactNo: '',
-        farmArea: '',
-        cropType: '',
-        experience: '',
+        emailid: '',
+        password:'',
+        
     });
 
     const [formErrors, setFormErrors] = useState({});
@@ -31,23 +28,12 @@ const RegistrationPage = () => {
             errors.name = 'Name is required';
         }
         if (!formData.address) {
-            errors.address = 'Address is required';
+            errors.address = 'Emailid is required';
         }
         if (!formData.farmType) {
-            errors.farmType = 'Farm Type is required';
+            errors.farmType = 'Password is required';
         }
-        if (!phoneRegex.test(formData.contactNo)) {
-            errors.contactNo = 'Please enter a valid phone number';
-        }
-        if (!formData.farmArea) {
-            errors.farmArea = 'Farm area is required';
-        }
-        if (!formData.cropType) {
-            errors.cropType = 'Crop type is required';
-        }
-        if (!formData.experience) {
-            errors.experience = 'Experience is required';
-        }
+     
 
         setFormErrors(errors);
         return Object.keys(errors).length === 0;
@@ -84,9 +70,9 @@ const RegistrationPage = () => {
                             {formErrors.name && <span className={styles.errorMessage}>{formErrors.name}</span>}
                         </div>
                         <div className={styles.formGroup}>
-                            <label htmlFor="address">Address</label>
+                            <label htmlFor="address">Email id</label>
                             <input
-                                type="text"
+                                type="email"
                                 id="address"
                                 name="address"
                                 className={styles.inputField}
@@ -97,9 +83,9 @@ const RegistrationPage = () => {
                             {formErrors.address && <span className={styles.errorMessage}>{formErrors.address}</span>}
                         </div>
                         <div className={styles.formGroup}>
-                            <label htmlFor="farmType">Farm Type</label>
+                            <label htmlFor="farmType">Password</label>
                             <input
-                                type="text"
+                                type="password"
                                 id="farmType"
                                 name="farmType"
                                 className={styles.inputField}
@@ -109,58 +95,8 @@ const RegistrationPage = () => {
                             />
                             {formErrors.farmType && <span className={styles.errorMessage}>{formErrors.farmType}</span>}
                         </div>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="contactNo">Contact No.</label>
-                            <input
-                                type="tel"
-                                id="contactNo"
-                                name="contactNo"
-                                className={styles.inputField}
-                                value={formData.contactNo}
-                                onChange={handleChange}
-                                required
-                            />
-                            {formErrors.contactNo && <span className={styles.errorMessage}>{formErrors.contactNo}</span>}
-                        </div>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="farmArea">Area of Farm (in acres)</label>
-                            <input
-                                type="number"
-                                id="farmArea"
-                                name="farmArea"
-                                className={styles.inputField}
-                                value={formData.farmArea}
-                                onChange={handleChange}
-                                required
-                            />
-                            {formErrors.farmArea && <span className={styles.errorMessage}>{formErrors.farmArea}</span>}
-                        </div>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="cropType">Crop Type</label>
-                            <input
-                                type="text"
-                                id="cropType"
-                                name="cropType"
-                                className={styles.inputField}
-                                value={formData.cropType}
-                                onChange={handleChange}
-                                required
-                            />
-                            {formErrors.cropType && <span className={styles.errorMessage}>{formErrors.cropType}</span>}
-                        </div>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="experience">Experience (in years)</label>
-                            <input
-                                type="number"
-                                id="experience"
-                                name="experience"
-                                className={styles.inputField}
-                                value={formData.experience}
-                                onChange={handleChange}
-                                required
-                            />
-                            {formErrors.experience && <span className={styles.errorMessage}>{formErrors.experience}</span>}
-                        </div>
+                        
+                        
                         <button type="submit" className={styles.registerButton}>Register</button>
                     </form>
                 )}
