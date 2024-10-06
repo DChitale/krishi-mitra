@@ -11,29 +11,29 @@
     background-position: center;
     height: 500px; /* Height of the hero section */
     display: flex;
-    align-items: flex-start; /* Align items to the start to lower the text */
+    align-items: flex-start;
     justify-content: center;
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .heroOverlay {
-    background-color: rgba(0, 0, 0, 0.3); /* Reduced darkness of the overlay */
+    background-color: rgba(0, 0, 0, 0.3);
     padding: 40px;
     text-align: center;
     border-radius: 12px;
-    position: relative; /* Allows positioning of children */
-    top: 100px; /* Adjusts vertical position of the overlay */
+    position: relative;
+    top: 100px; /* Vertical positioning */
 }
 
 .heroTitle {
-    font-size: 2rem; /* Slightly smaller font size for the title */
+    font-size: 2rem;
     color: #ffffff;
     margin-bottom: 10px;
 }
 
 .heroSubtitle {
-    font-size: 1rem; /* Adjusted font size */
+    font-size: 1rem;
     color: #ffffff;
     margin-bottom: 20px;
     line-height: 1.5;
@@ -71,6 +71,7 @@
     display: flex;
     justify-content: center;
     gap: 30px;
+    flex-wrap: wrap; /* Makes the feature cards wrap on smaller screens */
 }
 
 .featureCard {
@@ -78,7 +79,8 @@
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 30%;
+    width: 30%; /* Adjust for desktop */
+    min-width: 250px; /* Prevent feature cards from becoming too small */
     text-align: center;
     transition: transform 0.3s ease;
 }
@@ -164,5 +166,87 @@
     line-height: 1.5;
 }
 
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+    .heroSection {
+        height: 400px;
+    }
+
+    .heroTitle {
+        font-size: 1.8rem;
+    }
+
+    .heroSubtitle {
+        font-size: 0.9rem;
+    }
+
+    .ctaButton {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    .featureCard {
+        width: 45%; /* Adjust width for tablet screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .heroSection {
+        height: 350px;
+    }
+
+    .heroOverlay {
+        padding: 20px;
+    }
+
+    .heroTitle {
+        font-size: 1.6rem;
+    }
+
+    .heroSubtitle {
+        font-size: 0.85rem;
+    }
+
+    .ctaButton {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+    }
+
+    .featuresContainer {
+        flex-direction: column; /* Stack the feature cards on top of each other */
+    }
+
+    .featureCard {
+        width: 80%; /* Full width for smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .faqItem {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroSection {
+        height: 300px;
+    }
+
+    .heroTitle {
+        font-size: 1.4rem;
+    }
+
+    .heroSubtitle {
+        font-size: 0.8rem;
+    }
+
+    .ctaButton {
+        font-size: 0.8rem;
+        padding: 6px 10px;
+    }
+
+    .featureCard {
+        width: 90%;
+    }
+}
 
 
