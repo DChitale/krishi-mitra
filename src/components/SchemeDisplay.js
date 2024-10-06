@@ -13,8 +13,8 @@ const SchemeDisplay = () => {
         const fetchSchemes = async () => {
             try {
                 const response = await databases.listDocuments(
-                    process.env.NEXT_APPWRITE_DATABASE_ID, // Use environment variable
-                    process.env.NEXT_APPWRITE_COLLECTION_ID  // Use environment variable
+                    process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID, // Use the correct environment variable
+                    process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID // Use the correct environment variable
                 );
                 setSchemes(response.documents);
             } catch (err) {
@@ -24,7 +24,6 @@ const SchemeDisplay = () => {
                 setLoading(false);
             }
         };
-
         fetchSchemes();
     }, []);
 
