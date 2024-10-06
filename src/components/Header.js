@@ -13,16 +13,22 @@ const Header = () => {
     useEffect(() => {
         const checkLoginStatus = async () => {
             try {
-                const session = await account.getSession();  // Check if a session exists
-                setIsLoggedIn(!!session);  // If a session exists, set the user as logged in
+                const session = await account.getSession('current');  // Specify 'current' to get the current session
+                setIsLoggedIn(!!session);  // Update login state based on session existence
             } catch (error) {
-                console.error('No session found:', error.message);
-                setIsLoggedIn(false);  // If no session, the user is not logged in
+                // Handle specific errors here
+                if (error.message.includes('Missing required parameter')) {
+                    console.error('No session found:', error.message);
+                    setIsLoggedIn(false);  // No session means user is not logged in
+                } else {
+                    console.error('Error fetching session:', error.message);
+                }
             }
         };
-
+    
         checkLoginStatus();
     }, []);
+    
 
     // Handle logout function
     const handleLogout = async () => {
@@ -37,28 +43,20 @@ const Header = () => {
 
     return (
         <header className={styles.header}>
-            <nav className={styles.navContainer}>
-                <div className={styles.navLeft}>
-                    <ul className={styles.navList}>
-                        <li className={styles.navItem}><Link href="/">Home</Link></li>
-                        <li className={styles.navItem}><Link href="/about">About</Link></li>
-                        <li className={styles.navItem}><Link href="/contact">Contact</Link></li>
-                    </ul>
-                </div>
+            <nav>
+                <ul className={styles.navList}>
+                    <li><Link href="/">Home</Link></li>
+                    <li><Link href="/about">About</Link></li>
+                    <li><Link href="/contact">Contact</Link></li>
+                    {/* <li><Link href="/scheme">Schemes</Link></li> */}
 
-                <div className={styles.logoContainer}>
-                    <img src="https://i.ibb.co/HF5r4tK/LOGO-removebg-preview.png"alt="Krushi Mitra Logo" className={styles.logo} />
-                    <span className={styles.brandName}>KRISHIMITRA</span>
-                </div>
-
-                <div className={styles.navRight}>
-                    {/* Conditionally render Login or Logout */}
+                    {/* Conditionally render Login or Logout based on user login state */}
                     {!isLoggedIn ? (
-                        <Link href="/login" className={styles.navItemRight}>Login</Link>
+                        <li><Link href="/login">Login</Link></li>
                     ) : (
-                        <button onClick={handleLogout} className={styles.logoutButton}>Logout</button>
+                        <li onClick={handleLogout} >Logout</li>
                     )}
-                </div>
+                </ul>
             </nav>
         </header>
     );

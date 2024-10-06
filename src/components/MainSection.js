@@ -1,6 +1,6 @@
 // src/components/MainSection.js
 'use client';  // Ensure this is a Client Component if necessary
-
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 import styles from '../styles/MainSection.module.css';
 
@@ -57,7 +57,7 @@ const MainSection = () => {
                     <p className={styles.heroSubtitle}>
                         Find the latest schemes and benefits available for farmers.
                     </p>
-                    <button className={styles.ctaButton}>Explore Schemes</button>
+                    <a href='/farmerinput'><button className={styles.ctaButton}>Explore Schemes</button></a>
                 </div>
             </section>
 

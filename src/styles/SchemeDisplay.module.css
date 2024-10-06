@@ -2,6 +2,9 @@
 .schemeContainer {
     padding: 20px;
     background-color: #e8f5e9; /* Light green background */
+    max-height: 80vh; /* Set a maximum height for the container */
+    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .title {

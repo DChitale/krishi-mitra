@@ -1,172 +1,67 @@
-// src/components/RegistrationPage.js
 'use client';
+import React, { useEffect, useState } from 'react';
+import { databases } from '../appwrite'; 
+import styles from '../styles/SchemeDisplay.module.css';
 
-import React, { useState } from 'react';
-import styles from '../styles/RegistrationPage.module.css';
+const SchemeRecommeder = ({ filters }) => {
+    const [schemes, setSchemes] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
-const RegistrationPage = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        address: '',
-        farmType: '',
-        contactNo: '',
-        farmArea: '',
-        cropType: '',
-        experience: '',
-    });
+    useEffect(() => {
+        const fetchSchemes = async () => {
+            try {
+                const response = await databases.listDocuments(
+                    process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID, 
+                    process.env.NEXT_PUBLIC_APPWRITE_COLLECTION_ID 
+                );
+                
+                let filteredSchemes = response.documents;
 
-    const [formErrors, setFormErrors] = useState({});
-    const [isSubmitted, setIsSubmitted] = useState(false);
+                // Filter based on form input data (income, cropType, etc.)
+                if (filters) {
+                    filteredSchemes = filteredSchemes.filter(scheme => {
+                        // Check if the farmer's income is less than or equal to the scheme's required income
+                        const isIncomeEligible = filters.Income <= scheme.Income;
+                        // Check if the crop type matches
+                        const isCropTypeEligible = scheme.cropType.includes(filters.cropType); // Use includes for array comparison
+                
+                        // Display schemes where both conditions are met
+                        return isIncomeEligible && isCropTypeEligible; // Both conditions must be true
+                    });
+                }
+                
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
+                setSchemes(filteredSchemes);
+            } catch (err) {
+                console.error('Error fetching schemes:', err);
+                setError('Failed to fetch schemes. Please try again later.');
+            } finally {
+                setLoading(false);
+            }
+        };
 
-    const validate = () => {
-        let errors = {};
-        const phoneRegex = /^[6-9]\d{9}$/; // Basic validation for phone number
+        fetchSchemes();
+    }, [filters]);
 
-        if (!formData.name) {
-            errors.name = 'Name is required';
-        }
-        if (!formData.address) {
-            errors.address = 'Address is required';
-        }
-        if (!formData.farmType) {
-            errors.farmType = 'Farm Type is required';
-        }
-        if (!phoneRegex.test(formData.contactNo)) {
-            errors.contactNo = 'Please enter a valid phone number';
-        }
-        if (!formData.farmArea) {
-            errors.farmArea = 'Farm area is required';
-        }
-        if (!formData.cropType) {
-            errors.cropType = 'Crop type is required';
-        }
-        if (!formData.experience) {
-            errors.experience = 'Experience is required';
-        }
-
-        setFormErrors(errors);
-        return Object.keys(errors).length === 0;
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (validate()) {
-            setIsSubmitted(true);
-            alert('Form submitted successfully!');
-            // Here you can handle the form submission logic, like sending data to the backend
-        }
-    };
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>{error}</p>;
+    if (schemes.length === 0) return <p>No schemes available for your input.</p>;
 
     return (
-        <div className={styles.registrationPage}>
-            <div className={styles.registrationContainer}>
-                <h2 className={styles.title}>Farmer Registration</h2>
-                {isSubmitted ? (
-                    <p className={styles.successMessage}>Registration successful!</p>
-                ) : (
-                    <form className={styles.registrationForm} onSubmit={handleSubmit}>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="name">Name</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                className={styles.inputField}
-                                value={formData.name}
-                                onChange={handleChange}
-                                required
-                            />
-                            {formErrors.name && <span className={styles.errorMessage}>{formErrors.name}</span>}
-                        </div>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="address">Address</label>
-                            <input
-                                type="text"
-                                id="address"
-                                name="address"
-                                className={styles.inputField}
-                                value={formData.address}
-                                onChange={handleChange}
-                                required
-                            />
-                            {formErrors.address && <span className={styles.errorMessage}>{formErrors.address}</span>}
-                        </div>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="farmType">Farm Type</label>
-                            <input
-                                type="text"
-                                id="farmType"
-                                name="farmType"
-                                className={styles.inputField}
-                                value={formData.farmType}
-                                onChange={handleChange}
-                                required
-                            />
-                            {formErrors.farmType && <span className={styles.errorMessage}>{formErrors.farmType}</span>}
-                        </div>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="contactNo">Contact No.</label>
-                            <input
-                                type="tel"
-                                id="contactNo"
-                                name="contactNo"
-                                className={styles.inputField}
-                                value={formData.contactNo}
-                                onChange={handleChange}
-                                required
-                            />
-                            {formErrors.contactNo && <span className={styles.errorMessage}>{formErrors.contactNo}</span>}
-                        </div>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="farmArea">Area of Farm (in acres)</label>
-                            <input
-                                type="number"
-                                id="farmArea"
-                                name="farmArea"
-                                className={styles.inputField}
-                                value={formData.farmArea}
-                                onChange={handleChange}
-                                required
-                            />
-                            {formErrors.farmArea && <span className={styles.errorMessage}>{formErrors.farmArea}</span>}
-                        </div>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="cropType">Crop Type</label>
-                            <input
-                                type="text"
-                                id="cropType"
-                                name="cropType"
-                                className={styles.inputField}
-                                value={formData.cropType}
-                                onChange={handleChange}
-                                required
-                            />
-                            {formErrors.cropType && <span className={styles.errorMessage}>{formErrors.cropType}</span>}
-                        </div>
-                        <div className={styles.formGroup}>
-                            <label htmlFor="experience">Experience (in years)</label>
-                            <input
-                                type="number"
-                                id="experience"
-                                name="experience"
-                                className={styles.inputField}
-                                value={formData.experience}
-                                onChange={handleChange}
-                                required
-                            />
-                            {formErrors.experience && <span className={styles.errorMessage}>{formErrors.experience}</span>}
-                        </div>
-                        <button type="submit" className={styles.registerButton}>Register</button>
-                    </form>
-                )}
-            </div>
+        <div className={styles.schemeContainer}>
+            <h1 className={styles.title}>Relevant Government Schemes for Farmers</h1>
+            {schemes.map((scheme) => (
+                <div key={scheme.$id} className={styles.schemeCard}>
+                    <h2 className={styles.schemeName}>{scheme.Name}</h2>
+                    <p className={styles.description}>{scheme.Description}</p>
+                    <p><strong>Eligibility:</strong> {scheme.Eligibility}</p>
+                    <p><strong>Benefits:</strong> {scheme.Benefits}</p>
+                    <p><strong>Deadline:</strong> {scheme.Deadline}</p>
+                </div>
+            ))}
         </div>
     );
 };
 
-export default RegistrationPage;
+export default SchemeRecommeder;

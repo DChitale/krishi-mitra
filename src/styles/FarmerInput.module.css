@@ -1,0 +1,102 @@
+/* RegistrationPage.module.css */
+
+/* Container Styling */
+.registrationPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.registrationContainer {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.registrationForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup {
+    margin-bottom: 15px;
+}
+
+.label {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.inputField {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.registerButton {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.registerButton:hover {
+    background-color: #45a049;
+}
+
+/* Error Message Styling */
+.errorMessage {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.successMessage {
+    color: green;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .registrationContainer {
+        padding: 20px;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 20px;
+    }
+
+    .inputField {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .registerButton {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
