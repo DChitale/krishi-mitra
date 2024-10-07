@@ -16,15 +16,18 @@
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 .heroOverlay {
     background-color: rgba(0, 0, 0, 0.3);
     padding: 40px;
     text-align: center;
     border-radius: 12px;
+
     position: relative;
     top: 100px; /* Vertical positioning */
+    
+    backdrop-filter: blur(2px); /* Apply a blur effect */
 }
+
 
 .heroTitle {
     font-size: 2rem;
