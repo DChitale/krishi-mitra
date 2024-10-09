@@ -22,7 +22,7 @@ const LoginPage = () => {
                 // Login the user with Appwrite
                 await account.createEmailPasswordSession(email, password);
                 // alert('Login successful!');
-                router.push('/scheme');  // Redirect to homepage or another path
+                router.push('/farmerinput');  // Redirect to homepage or another path
             } catch (error) {
                 console.error('Login failed:', error.message);
                 setErrorMessage('Invalid credentials. Please try again.');

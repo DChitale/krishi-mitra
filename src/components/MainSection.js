@@ -57,7 +57,7 @@ const MainSection = () => {
                     <p className={styles.heroSubtitle}>
                         Find the latest schemes and benefits available for farmers.
                     </p>
-                    <a href='/farmerinput'><button className={styles.ctaButton}>Explore Schemes</button></a>
+                    <a href='/scheme'><button className={styles.ctaButton}>Explore Schemes</button></a>
                 </div>
             </section>
 
