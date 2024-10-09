@@ -27,7 +27,7 @@ const SchemeRecommeder = ({ filters }) => {
                         const isCropTypeEligible = scheme.cropType.includes(filters.cropType); // Use includes for array comparison
                 
                         // Display schemes where both conditions are met
-                        return isIncomeEligible && isCropTypeEligible; // Both conditions must be true
+                        return isIncomeEligible || isCropTypeEligible; // Both conditions must be true
                     });
                 }
                 
@@ -55,8 +55,20 @@ const SchemeRecommeder = ({ filters }) => {
                 <div key={scheme.$id} className={styles.schemeCard}>
                     <h2 className={styles.schemeName}>{scheme.Name}</h2>
                     <p className={styles.description}>{scheme.Description}</p>
-                    <p><strong>Eligibility:</strong> {scheme.Eligibility}</p>
-                    <p><strong>Benefits:</strong> {scheme.Benefits}</p>
+                    <p><strong>Eligibility:</strong></p>
+<ul className={styles.noBullets}>
+  {scheme.Eligibility.split('\n').filter(item => item.trim() !== '').map((item, index) => (
+    <li key={index}>{item}</li>
+  ))}
+</ul>
+
+<p><strong>Benefits:</strong></p>
+<ul className={styles.noBullets}>
+  {scheme.Benefits.split('\n').filter(item => item.trim() !== '').map((item, index) => (
+    <li key={index}>{item}</li>
+  ))}
+</ul>
+
                     <p><strong>Deadline:</strong> {scheme.Deadline}</p>
                 </div>
             ))}
