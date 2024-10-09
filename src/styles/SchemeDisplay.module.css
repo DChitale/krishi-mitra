@@ -6,7 +6,15 @@
     overflow-y: auto; /* Allow vertical scrolling */
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
-
+.noBullets {
+    list-style-type: none; /* Removes bullet points */
+    padding-left: 0; /* Optional: Removes indentation */
+  }
+  
+  .noBullets li {
+    margin-bottom: 8px; /* Adds space between items */
+  }
+  
 .title {
     text-align: center;
     color: #4caf50; /* Dark green for the title */
