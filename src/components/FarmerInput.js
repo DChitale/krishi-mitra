@@ -27,9 +27,7 @@ const FarmerInput = () => {
         if (!formData.farmArea) {
             errors.farmArea = 'Farm area is required';
         }
-        if (!formData.cropType) {
-            errors.cropType = 'Crop type is required';
-        }
+        
         setFormErrors(errors);
         return Object.keys(errors).length === 0;
     };
@@ -69,7 +67,7 @@ const FarmerInput = () => {
                             className={styles.inputField}
                             value={formData.farmArea}
                             onChange={handleChange}
-                            required
+                            // requred
                         />
                         {formErrors.farmArea && <span className={styles.errorMessage}>{formErrors.farmArea}</span>}
                     </div>
@@ -82,7 +80,7 @@ const FarmerInput = () => {
                             className={styles.inputField}
                             value={formData.cropType}
                             onChange={handleChange}
-                            required
+                            // required
                         />
                         {formErrors.cropType && <span className={styles.errorMessage}>{formErrors.cropType}</span>}
                     </div>
