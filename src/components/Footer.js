@@ -10,14 +10,14 @@ const Footer = () => {
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
-                <p className={styles.text}>© 2024 Krishi Mitra. All Rights Reserved.</p>
+                {/* <p className={styles.text}>© 2024 Krishi Mitra. All Rights Reserved.</p> */}
                 <nav className={styles.nav}>
                     <ul className={styles.navList}>
                         <li>
                             <Link href="/">Home</Link>
                         </li>
                         <li>
-                            <Link href="/schemes">Schemes</Link>
+                            <Link href="/scheme">Schemes</Link>
                         </li>
                         <li>
                             <Link href="/about">About</Link>
