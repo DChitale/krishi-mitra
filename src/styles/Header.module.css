@@ -14,7 +14,7 @@
 }
 
 .navList a {
-    color: rgb(54, 54, 54); /* Link color */
+     color: rgb(255, 255, 255); /* Link color */
     text-decoration: none; /* Remove underline */
     font-weight: bold; /* Bold text */
 }
