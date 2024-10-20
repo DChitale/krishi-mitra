@@ -1,0 +1,51 @@
+{
+    "header": {
+      "home": "Home",
+      "about": "About",
+      "contact": "Contact",
+      "login": "Login",
+      "logout": "Logout"
+    },
+    "mainpage": {
+      "heroTitle": "Welcome to the Agricultural Schemes Portal",
+      "heroSubtitle": "Find the latest schemes and benefits available for farmers.",
+      "exploreSchemes": "Explore Schemes",
+      "featuresTitle": "Website Features",
+      "faqTitle": "Frequently Asked Questions",
+      "userFriendlyInterface": "User-Friendly Interface",
+      "userFriendlyDescription": "Our platform is designed with users in mind, making it easy to navigate and find the information you need.",
+      "comprehensiveSchemes": "Comprehensive Schemes",
+      "comprehensiveDescription": "Browse through a wide range of agricultural schemes tailored to meet the needs of farmers.",
+      "realTimeUpdates": "Real-Time Updates",
+      "realTimeDescription": "Stay informed with the latest updates and notifications about new schemes and benefits.",
+      "faq1Question": "What types of agricultural schemes are available?",
+      "faq1Answer": "Various schemes are available including subsidies, loans, and grants aimed at improving farming efficiency and productivity.",
+      "faq2Question": "How can I apply for a scheme?",
+      "faq2Answer": "You can apply through our portal by filling out the necessary application forms available under each scheme.",
+      "faq3Question": "Who is eligible for these schemes?",
+      "faq3Answer": "Eligibility varies by scheme but generally includes farmers, agricultural cooperatives, and rural entrepreneurs.",
+      "faq4Question": "What documents do I need to provide?",
+      "faq4Answer": "Typically, you will need to provide identification, proof of land ownership, and other relevant documents as specified in each scheme.",
+      "footerText": "All Rights Reserved"
+    },
+    "aboutpage": {
+      "title": "About Us",
+      "description1": "Welcome to Krishi Mitra, your trusted partner in agriculture! Our mission is to empower farmers by providing comprehensive information about government schemes and resources that can help improve their farming practices and enhance their livelihoods.",
+      "description2": "We understand the challenges faced by farmers in accessing timely and relevant information. That’s why we have created a user-friendly platform that simplifies the process of finding government schemes tailored to your needs.",
+      "description3": "Our team is dedicated to keeping you informed about the latest developments in agricultural policies, funding opportunities, and support programs. Together, we can cultivate a prosperous future for our farmers and communities.",
+      "subtitle": "Why Choose Us?",
+      "benefitsList": {
+        "benefit1": "Comprehensive information on government schemes",
+        "benefit2": "User-friendly platform designed for farmers",
+        "benefit3": "Regular updates on agricultural policies",
+        "benefit4": "Dedicated support for navigating resources"
+      }
+    },
+    "footer": {
+      "home": "Home",
+      "schemes": "Schemes",
+      "about": "About",
+      "contact": "Contact"
+    }
+  }
+  

@@ -1,38 +1,68 @@
 .header {
-    background-color: #30d274; /* Green background */
-    padding: 1rem; /* Padding around header */
+    background-color: #30d274;
+    padding: 1rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .navList {
-    list-style-type: none; /* Remove bullets */
-    display: flex; /* Horizontal layout */
-    justify-content: space-evenly; /* Space items evenly */
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
 }
 
 .navList li {
-    margin: 0 10px; /* Spacing between links */
+    margin: 5px 10px;
 }
 
-.navList a {
-     color: rgb(255, 255, 255); /* Link color */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Bold text */
+.navList a, .navList li {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-.navList a:hover {
-    text-decoration: underline; /* Underline on hover */
+.navList a:hover, .navList li:hover {
+    text-decoration: underline;
 }
 
-/* Logout Button Styles */
-.logoutButton {
- /* Red background color */
-    color: rgb(10, 10, 10); /* Text color */
-    border: none; /* No border */
-    border-radius: 4px; /* Rounded corners */
- 
-    cursor: pointer; /* Cursor changes to pointer on hover */
-    font-size: 16px; /* Font size */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+.languageSwitcher {
+    display: flex;
+    gap: 10px;
 }
 
-/* Hover effect for the button */
+.languageSwitcher button {
+    background-color: white;
+    color: #30d274;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.languageSwitcher button:hover {
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+    }
+
+    .navList {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .languageSwitcher {
+        margin-top: 10px;
+    }
+}
