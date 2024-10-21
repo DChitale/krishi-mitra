@@ -1,9 +1,11 @@
 'use client';
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import SchemeRecommeder from './SchemeRecommender'; // Updated to import SchemeRecommeder
 import styles from '../styles/FarmerInput.module.css';
 
 const FarmerInput = () => {
+    const { t, i18n } = useTranslation();
     const [formData, setFormData] = useState({
         Income: '',
         farmArea: '',
@@ -18,11 +20,11 @@ const FarmerInput = () => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
     };
-
+ 
     const validate = () => {
         let errors = {};
         if (!formData.Income) {
-            errors.Income = 'Income is required';
+            errors.Income = t('farmerinput.incomeRequired');
         }
         if (!formData.farmArea) {
             errors.farmArea = 'Farm area is required';
@@ -43,10 +45,10 @@ const FarmerInput = () => {
     return (
         <div className={styles.registrationPage}>
             <div className={styles.registrationContainer}>
-                <h2 className={styles.title}>Farmer Input</h2>
+                <h2 className={styles.title}>{t('farmerinput.title')}</h2>
                 <form className={styles.registrationForm} onSubmit={handleSubmit}>  
                     <div className={styles.formGroup}>
-                        <label htmlFor="Income">Income</label>
+                        <label htmlFor="Income">{t('farmerinput.income')}</label>
                         <input
                             type="number"
                             id="Income"
@@ -59,7 +61,7 @@ const FarmerInput = () => {
                         {formErrors.Income && <span className={styles.errorMessage}>{formErrors.Income}</span>}
                     </div>
                     <div className={styles.formGroup}>
-                        <label htmlFor="farmArea">Area of Farm (in acres)</label>
+                        <label htmlFor="farmArea">{t('farmerinput.area')}</label>
                         <input
                             type="number"
                             id="farmArea"
@@ -72,7 +74,7 @@ const FarmerInput = () => {
                         {formErrors.farmArea && <span className={styles.errorMessage}>{formErrors.farmArea}</span>}
                     </div>
                     <div className={styles.formGroup}>
-                        <label htmlFor="cropType">Crop Type</label>
+                        <label htmlFor="cropType">{t('farmerinput.croptype')}</label>
                         <input
                             type="text"
                             id="cropType"
@@ -84,7 +86,7 @@ const FarmerInput = () => {
                         />
                         {formErrors.cropType && <span className={styles.errorMessage}>{formErrors.cropType}</span>}
                     </div>
-                    <button type="submit" className={styles.registerButton}>Check</button>
+                    <button type="submit" className={styles.registerButton}>{t('farmerinput.check')}</button>
                 </form>
                 
                 {/* After form submission, open SchemeRecommeder instead of SchemeDisplay */}
