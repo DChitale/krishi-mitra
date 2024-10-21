@@ -25,7 +25,7 @@
     position: relative;
     top: 100px; /* Vertical positioning */
     
-    backdrop-filter: blur(2px); /* Apply a blur effect */
+     backdrop-filter: blur(2px); /*Apply a blur effect*/
 }
 
 
