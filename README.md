@@ -31,6 +31,12 @@ A specialized section provides tools for students to organize tasks, manage time
 - **Backend**: Powered by Appwrite for secure and scalable data management.
 - **Styling**: Organized CSS within a modular `styles` folder for maintainability and efficiency.
 
+## Deployment
+
+KRUSHI-MITR is deployed on Vercel and can be accessed at:
+
+[https://krushi-mitra-web.vercel.app/](https://krushi-mitra-web.vercel.app/)
+
 ## Getting Started
 
 To set up KRUSHI-MITR locally:
@@ -70,12 +76,6 @@ To set up KRUSHI-MITR locally:
 ### For Farmers
 - Input personal and land details to receive curated government schemes.
 - Explore schemes categorized for agricultural development, financial aid, and more.
-
-### For Students
-- Utilize the student planner for effective task management and study organization.
-
-### For Small Businesses and Nonprofits
-- Browse schemes aimed at boosting small businesses and supporting nonprofit initiatives.
 
 ## Future Enhancements
 
