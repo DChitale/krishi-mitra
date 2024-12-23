@@ -1,5 +1,10 @@
 # KRUSHI-MITR
 
+![Home](assets/Home.png)
+![Home 2](assets/Home2.png)
+![Login Register](assets/LoginRegister.png)
+![Contact Us](assets/Contactus.png)
+
 KRUSHI-MITR is a web platform dedicated to empowering farmers, students, small businesses, and nonprofit organizations by simplifying access to government schemes. The platform serves as a bridge to financial aid and welfare opportunities, providing personalized guidance and up-to-date resources. By fostering inclusivity and innovation, KRUSHI-MITR aims to create a meaningful impact on diverse communities.
 
 ## Key Objectives
@@ -76,6 +81,12 @@ To set up KRUSHI-MITR locally:
 ### For Farmers
 - Input personal and land details to receive curated government schemes.
 - Explore schemes categorized for agricultural development, financial aid, and more.
+
+### For Students
+- Utilize the student planner for effective task management and study organization.
+
+### For Small Businesses and Nonprofits
+- Browse schemes aimed at boosting small businesses and supporting nonprofit initiatives.
 
 ## Future Enhancements
 
