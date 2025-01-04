@@ -38,7 +38,7 @@ A specialized section provides tools for students to organize tasks, manage time
 
 ## Deployment
 
-KRUSHI-MITR is deployed on Vercel and can be accessed at:
+KRUSHI-MITRA is deployed on Vercel and can be accessed at:
 
 [https://krushi-mitra-web.vercel.app/](https://krushi-mitra-web.vercel.app/)
 
