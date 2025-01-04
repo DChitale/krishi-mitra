@@ -33,7 +33,6 @@ const LoginPage = () => {
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);  // Toggle password visibility
     };
-
     return (
         <div className={styles.loginPage}>
             <div className={styles.loginContainer}>
