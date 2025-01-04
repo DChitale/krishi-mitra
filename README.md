@@ -1,11 +1,11 @@
-# KRUSHI-MITR
+# KRUSHI-MITRA
 
 ![Home](assets/Home.png)
 ![Home 2](assets/Home2.png)
 ![Login Register](assets/LoginRegister.png)
 ![Contact Us](assets/Contactus.png)
 
-KRUSHI-MITR is a web platform dedicated to empowering farmers, students, small businesses, and nonprofit organizations by simplifying access to government schemes. The platform serves as a bridge to financial aid and welfare opportunities, providing personalized guidance and up-to-date resources. By fostering inclusivity and innovation, KRUSHI-MITR aims to create a meaningful impact on diverse communities.
+KRUSHI-MITRA is a web platform dedicated to empowering farmers, students, small businesses, and nonprofit organizations by simplifying access to government schemes. The platform serves as a bridge to financial aid and welfare opportunities, providing personalized guidance and up-to-date resources. By fostering inclusivity and innovation, KRUSHI-MITR aims to create a meaningful impact on diverse communities.
 
 ## Key Objectives
 
@@ -16,13 +16,13 @@ KRUSHI-MITR is a web platform dedicated to empowering farmers, students, small b
 ## Core Features
 
 ### Personalized Scheme Recommendations
-KRUSHI-MITR uses user inputs to suggest government schemes tailored to their specific needs, ensuring relevance and usefulness.
+KRUSHI-MITRA uses user inputs to suggest government schemes tailored to their specific needs, ensuring relevance and usefulness.
 
 ### Simplified Navigation
 The platform offers an intuitive interface, making it easy for users to browse through various schemes and resources without technical expertise.
 
 ### Up-to-date Resources
-By maintaining current information on available schemes, KRUSHI-MITR ensures users stay informed about the latest opportunities.
+By maintaining current information on available schemes, KRUSHI-MITRA ensures users stay informed about the latest opportunities.
 
 ### Interactive Design
 The website includes engaging features, such as a rotating logo animation on hover, enhancing user experience and visual appeal.
@@ -44,7 +44,7 @@ KRUSHI-MITRA is deployed on Vercel and can be accessed at:
 
 ## Getting Started
 
-To set up KRUSHI-MITR locally:
+To set up KRUSHI-MITRA locally:
 
 ### Prerequisites
 
@@ -55,8 +55,8 @@ To set up KRUSHI-MITR locally:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/krushi-mitr.git
-   cd krushi-mitr
+   git clone https://github.com/yourusername/krushi-mitra.git
+   cd krushi-mitra
    ```
 
 2. **Install Dependencies**:
@@ -97,7 +97,7 @@ To set up KRUSHI-MITR locally:
 
 ## Contribution Guidelines
 
-KRUSHI-MITR thrives on community contributions. To contribute:
+KRUSHI-MITRA thrives on community contributions. To contribute:
 
 1. **Fork the Repository**.
 2. **Create a Feature Branch**:
@@ -116,4 +116,4 @@ KRUSHI-MITR thrives on community contributions. To contribute:
 
 ## Acknowledgments
 
-We extend our gratitude to all contributors and supporters of KRUSHI-MITR. Together, we can make a difference!
+We extend our gratitude to all contributors and supporters of KRUSHI-MITRA. Together, we can make a difference!
