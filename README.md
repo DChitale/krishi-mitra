@@ -55,8 +55,8 @@ To set up KRUSHI-MITR locally:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/krushi-mitr.git
-   cd krushi-mitr
+   git clone https://github.com/DChitale/krishi-mitra.git
+   cd krishi-mitra
    ```
 
 2. **Install Dependencies**:
